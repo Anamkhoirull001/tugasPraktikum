@@ -15,9 +15,10 @@ use App\Http\Controllers\Tugas1Controller;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
 Route::get('/tugas1', [Tugas1Controller::class, 'index']);
 
 Route::get('/nama3', function () {
