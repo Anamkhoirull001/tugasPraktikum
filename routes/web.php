@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Tugas1Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\Tugas1Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/tugas1', [Tugas1Controller::class, 'index']);
+
+Route::get('/nama3', function () {
+    echo '<h1> ini adalah /nama3';
+})->middleware('cmw');
+
+Route::get('/Postt', [PostController::class, 'index']);
+Route::post('store-form', [PostController::class, 'store']);
