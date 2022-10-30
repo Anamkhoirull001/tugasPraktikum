@@ -17,6 +17,7 @@ class Tugas1Midelware
      */
     public function handle(Request $request, Closure $next)
     {
+        echo '<script>alert ("Hallo")</script>';
         echo '<script>alert ("ini adalah middleware")</script>';
         return $next($request);
     }
