@@ -1,3 +1,10 @@
+<?php 
+use App\Models\Post;
+$model = new Post;
+$datas = $model->all();
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,5 +39,21 @@
     </div>
   </div>
 </div>  
+
+<table >
+  <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Desripsion</th>
+  </tr>
+
+  @foreach ($datas as $data )
+      <tr>
+          <td>{{ $data->id }}</td>
+          <td>{{ $data->title }}</td>
+          <td>{{ $data->description }}</td>
+      </tr>
+  @endforeach
+</table>
 </body>
 </html>

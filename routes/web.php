@@ -27,3 +27,5 @@ Route::get('/nama3', function () {
 
 Route::get('/Postt', [PostController::class, 'index']);
 Route::post('store-form', [PostController::class, 'store']);
+
+Route::get('/read', [PostController::class, 'read']);

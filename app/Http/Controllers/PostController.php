@@ -17,6 +17,18 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->description = $request->description;
         $post->save();
-        return redirect('Postt')->with('status', 'Blog Post Form Data Has Been inserted');
+
+        $model = new Post;
+        $datas = $model->all();
+        // return view('read', );
+
+        return redirect('Postt', ['datas' => $datas])->with('status', 'Blog Post Form Data Has Been inserted');
+    }
+
+    public function read()
+    {
+        $model = new Post;
+        $datas = $model->all();
+        return view('read', ['datas' => $datas]);
     }
 }
