@@ -9,7 +9,10 @@ class PostController extends Controller
 {
     public function index()
     {
-        return view('postt');
+
+        $model = new Post;
+        $datas = $model->all();
+        return view('postt', ['datas' => $datas]);
     }
     public function store(Request $request)
     {
@@ -17,12 +20,7 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->description = $request->description;
         $post->save();
-
-        $model = new Post;
-        $datas = $model->all();
-        // return view('read', );
-
-        return redirect('Postt', ['datas' => $datas])->with('status', 'Blog Post Form Data Has Been inserted');
+        return redirect('Postt')->with('status', 'Blog Post Form Data Has Been inserted');
     }
 
     public function read()

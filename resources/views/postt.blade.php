@@ -1,16 +1,9 @@
-<?php 
-use App\Models\Post;
-$model = new Post;
-$datas = $model->all();
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Laravel 8 Form Example Tutorial</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
   <div class="container mt-4">
@@ -39,21 +32,30 @@ $datas = $model->all();
     </div>
   </div>
 </div>  
+ <div class="container mt-4">
+  <table class="table table-primary table-striped" >
+    <tr class="table-primary">
+        <th>#</th>
+        <th>Title</th>
+        <th>Desripsion</th>
+        <th>creat post</th>
+        <th>update post</th>
+        <th>Action</th>
+    </tr>
 
-<table >
-  <tr>
-      <th>#</th>
-      <th>Title</th>
-      <th>Desripsion</th>
-  </tr>
+    @foreach ($datas as $data )
+        <tr class="table-dark">
+            <td class="table-info">{{ $data->id }}</td>
+            <td class="table-info">{{ $data->title }}</td>
+            <td class="table-info">{{ $data->description }}</td>
+            <td class="table-info">{{ $data->created_at }}</td>
+            <td class="table-info">{{ $data->updated_at }}</td>
+            <td class="table-info"><a href="/delete/{{ $data -> id }}" class="btn btn-danger">Delete</a></td>
 
-  @foreach ($datas as $data )
-      <tr>
-          <td>{{ $data->id }}</td>
-          <td>{{ $data->title }}</td>
-          <td>{{ $data->description }}</td>
-      </tr>
-  @endforeach
+        </tr>
+    @endforeach
 </table>
+ </div>
+
 </body>
 </html>

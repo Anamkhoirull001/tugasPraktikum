@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Tugas1Controller;
@@ -29,3 +30,8 @@ Route::get('/Postt', [PostController::class, 'index']);
 Route::post('store-form', [PostController::class, 'store']);
 
 Route::get('/read', [PostController::class, 'read']);
+Route::get('/delete/{id}', function ($id) {
+    $model = Post::find($id);
+    $model->delete();
+    return redirect('Postt')->with('status', 'Blog Post Form Data Has Been Deleted');
+});
