@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Tugas1Controller;
@@ -16,9 +15,7 @@ use App\Http\Controllers\Tugas1Controller;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/tugas1', [Tugas1Controller::class, 'index']);
 
@@ -26,12 +23,11 @@ Route::get('/nama3', function () {
     echo '<h1> ini adalah /nama3';
 })->middleware('cmw');
 
-Route::get('/Postt', [PostController::class, 'index']);
-Route::post('store-form', [PostController::class, 'store']);
 
-Route::get('/read', [PostController::class, 'read']);
-Route::get('/delete/{id}', function ($id) {
-    $model = Post::find($id);
-    $model->delete();
-    return redirect('Postt')->with('status', 'Blog Post Form Data Has Been Deleted');
-});
+// CRUD
+Route::get('/input', [PostController::class, 'index']);
+Route::post('store-form', [PostController::class, 'store']);
+Route::get('/', [PostController::class, 'read']);
+Route::get('/delete/{id}', [PostController::class, 'delete']);
+Route::get('/edit/{id}', [PostController::class, 'edit']);
+// Route::post('update', [PostController::class, 'update']);
