@@ -17,7 +17,7 @@
       Laravel 8 - Update Blog Post Form Example
     </div>
     <div class="card-body">
-      <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('update')}}">
+      <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('update')}}/{{ $data -> id }}">
        @csrf
         <div class="form-group">
           <label for="exampleInputEmail1">Title</label>

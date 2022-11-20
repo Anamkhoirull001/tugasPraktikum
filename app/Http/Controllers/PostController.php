@@ -41,26 +41,15 @@ class PostController extends Controller
     public function edit($id)
     {
         $model = Post::find($id);
-        return view('edit', ['data' => $model]);
+        return view('edit')->with('data', $model);
     }
 
-    // public function update(Request $request)
-    // {
-    //     // $this->validate($request, [
-    //     //     'title' => 'required',
-    //     //     'description' => 'required'
-    //     // ]);
-    //     $model = new Post;
-    //     $model = Post::find($id);
-    //     // $model->title = $request->input('title');
-    //     // $model->title = $request->title;
-    //     // $model->description = $request->description;
-    //     // $model->description = $request->input('description');
-    //     // $model->save();
-    //     $model->update([
-    //         'title' => $request->title,
-    //         'description' => $request->description
-    //     ]);
-    //     return redirect('/')->with('status', 'Blog Post Form Data Has Been Update');
-    // }
+    public function update(Request $request, $id)
+    {
+        $model = Post::find($id);
+        $model->title = $request->title;
+        $model->description = $request->description;
+        $model->save();
+        return redirect('/')->with('status', 'Blog Post Form Data Has Been Update');
+    }
 }

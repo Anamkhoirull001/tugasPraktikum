@@ -30,4 +30,4 @@ Route::post('store-form', [PostController::class, 'store']);
 Route::get('/', [PostController::class, 'read']);
 Route::get('/delete/{id}', [PostController::class, 'delete']);
 Route::get('/edit/{id}', [PostController::class, 'edit']);
-// Route::post('update', [PostController::class, 'update']);
+Route::post('update/{id}', [PostController::class, 'update']);
