@@ -9,11 +9,13 @@
 </head>
 <body>
     <div class="container mt-4">
+        <a href="/" class="btn btn-primary m-2">Home</a>
         @if(session('status'))
         <div class="alert alert-success">
             {{ session('status') }}
         </div>
       @endif
+
       <a href="/input" class="btn btn-success m-2">Create Data</a>
         <div class="card ">
             <div class="card-header text-center font-weight-bold bg-info">
@@ -38,7 +40,7 @@
                     <td class="table-info">{{ $data -> created_at }}</td>
                     <td class="table-info">{{ $data -> updated_at }}</td>
                     <td class="table-info">
-                        <a href="/edit/{{ $data -> id }}" class="btn btn-warning">update</a>
+                        <a href="/edit/{{ $data -> id }}" class="btn btn-warning">Edit</a>
                         <a href="/delete/{{ $data -> id }}" class="btn btn-danger" onclick="return confirm('Are You Sure Deleted?')">Delete</a>
                     </td>
                     
@@ -46,8 +48,6 @@
                 <?php $i++; ?>
                 @endforeach
             </table>
-        </div>
-        
-        
+        </div>       
 </body>
 </html>
