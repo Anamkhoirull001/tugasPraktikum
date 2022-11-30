@@ -6,84 +6,50 @@
     <meta name="description" content="" />
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
     <meta name="generator" content="Hugo 0.104.2" />
-    <title>Form | Home</title>
+    <title>CRUD | Home</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/" />
 
+    {{-- icons bootstrap --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, 0.1);
-        border: solid rgba(0, 0, 0, 0.15);
-        border-width: 1px 0;
-        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1), inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -0.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-    </style>
 
     <!-- Custom styles for this template -->
     <link href="css/cover.css" rel="stylesheet" />
   </head>
   <body class="d-flex h-100 text-center text-bg-dark">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="mb-auto">
-        <div>
-          <h3 class="float-md-start mb-0">Pemrograman Framework</h3>
-          <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link fw-bold py-1 px-0 " aria-current="page" href="/read">CRUD sederhana</a>
-            <a class="nav-link fw-bold py-1 px-0" href="/Mahasiswa">CRUD Mahasiswa</a>
+          <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid ">
+              <a class="navbar-brand text-white" href="#"><b>CRUD</b></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-5">
+                  <li class="nav-item">
+                    <a class="nav-link text-white " aria-current="page" href="/read"><b>Sederhana</b></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="/Mahasiswa"><b>Mahasiswa</b></a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="/login"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </nav>
-        </div>
+          <hr>
       </header>
 
       <main class="px-3">
         <h1>Pemrograman Framework</h1>
-        <p class="lead mt-3">laman web ini adalah laman buatan saya sebagai pemenuhan atas tugas mata kuliah  pemrograman Framework dimana Framework yang dipakai adalah  Frramework dari Bahasa Pemrograman PHP yaitu Laravel</p>
+        <p class="lead mt-3">Laman web ini adalah laman buatan saya sebagai pemenuhan atas tugas mata kuliah  pemrograman Framework dimana Framework yang dipakai adalah  Framework dari Bahasa Pemrograman PHP yaitu Laravel</p>
       
       </main>
 

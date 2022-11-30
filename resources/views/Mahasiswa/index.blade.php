@@ -1,23 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <title>- Laravel 8 -</title>
-</head>
-
-<body>
+@section('container')
     <div class="container mt-4">
-        <a href="/" class="btn btn-primary m-2">Home</a>
         @if(session('status'))
         <div class="alert alert-success">
             {{ session('status') }}
         </div>
         @endif
-        <a href="/MahasiswaInput" class="btn btn-success m-2">Create Data</a>
         <div class="card ">
             <div class="card-header text-center font-weight-bold bg-info">
                 <h4 style="color: white">DATA MAHASISWA</h4>
@@ -48,10 +37,6 @@
             </tr>
             @endforeach
         </table>
-
+        <a href="/MahasiswaInput" class="btn btn-success m-2">Create Data</a>
     </div>
-
-
-</body>
-
-</html>
+@endsection

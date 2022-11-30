@@ -1,10 +1,12 @@
 <?php
 
+use App\Models\Mahasiswa;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Tugas1Controller;
-use App\Models\Mahasiswa;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,9 @@ Route::get('/nama3', function () {
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('login', [LoginController::class, 'index']);
+Route::get('register', [RegisterController::class, 'index']);
 
 // CRUD 1
 Route::get('/input', [PostController::class, 'index']);
