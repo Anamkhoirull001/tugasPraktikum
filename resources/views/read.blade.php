@@ -1,7 +1,9 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="container mt-4">
+<a href="/input" class="btn btn-success mt-0">Create Data</a>
+
+    <div class="container mt-2">
         @if(session('status'))
         <div class="alert alert-success">
             {{ session('status') }}
@@ -31,15 +33,13 @@
                     <td class="table-info">{{ $data -> created_at }}</td>
                     <td class="table-info">{{ $data -> updated_at }}</td>
                     <td class="table-info">
-                        <a href="/edit/{{ $data -> id }}" class="btn btn-warning">Edit</a>
-                        <a href="/delete/{{ $data -> id }}" class="btn btn-danger" onclick="return confirm('Are You Sure Deleted?')">Delete</a>
+                        <a href="/edit/{{ $data -> id }}" class="btn btn-warning"><i class="bi bi-pencil-square"></i> Edit</a>
+                        <a href="/delete/{{ $data -> id }}" class="btn btn-danger" onclick="return confirm('Are You Sure Deleted?')"><i class="bi bi-trash3-fill text-black px-3"></i></a>
                     </td>
                     
                 </tr>
                 <?php $i++; ?>
                 @endforeach
             </table>
-             <a href="/input" class="btn btn-success m-2">Create Data</a>
-
         </div>     
 @endsection  

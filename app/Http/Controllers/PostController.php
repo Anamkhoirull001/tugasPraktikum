@@ -24,7 +24,10 @@ class PostController extends Controller
     {
         $model = new Post;
         $datas = $model->all();
-        return view('read', ['datas' => $datas]);
+        return view('read', [
+            'datas' => $datas,
+            'title' => 'CRUD | Post'
+        ]);
     }
 
     public function delete($id)

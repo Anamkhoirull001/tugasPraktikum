@@ -19,34 +19,36 @@ use App\Http\Controllers\MahasiswaController;
 |
 */
 
-
-
-Route::get('/tugas1', [Tugas1Controller::class, 'index']);
-
 Route::get('/nama3', function () {
     echo '<h1> ini adalah /nama3';
 })->middleware('cmw');
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', ['title' => 'CRUD | Home']);
 });
 
-Route::get('login', [LoginController::class, 'index']);
-Route::get('register', [RegisterController::class, 'index']);
+Route::get('login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('login', [LoginController::class, 'authenticate']);
+Route::post('logout', [LoginController::class, 'logout']);
+
+
+Route::get('register', [RegisterController::class, 'index'])->middleware('guest');
+Route::post('register', [RegisterController::class, 'store']);
 
 // CRUD 1
-Route::get('/input', [PostController::class, 'index']);
+Route::get('/input', [PostController::class, 'index'])->middleware('auth');
 Route::post('store-form', [PostController::class, 'store']);
-Route::get('/read', [PostController::class, 'read']);
-Route::get('/delete/{id}', [PostController::class, 'delete']);
-Route::get('/edit/{id}', [PostController::class, 'edit']);
+Route::get('/read', [PostController::class, 'read'])->middleware('auth');
+Route::get('/delete/{id}', [PostController::class, 'delete'])->middleware('auth');
+Route::get('/edit/{id}', [PostController::class, 'edit'])->middleware('auth');
 Route::post('update/{id}', [PostController::class, 'update']);
 
 // CRUD 2
-Route::get('MahasiswaInput', [MahasiswaController::class, 'index']);
+Route::get('MahasiswaInput', [MahasiswaController::class, 'index'])->middleware('auth');
 Route::post('store-mahasiswa', [MahasiswaController::class, 'store']);
-Route::get('/Mahasiswa', [MahasiswaController::class, 'show']);
-Route::get('/read-data/{nim}', [MahasiswaController::class, 'read']);
-Route::get('/edit-data/{nim}',  [MahasiswaController::class, 'edit']);
+Route::get('/Mahasiswa', [MahasiswaController::class, 'show'])->middleware('auth');
+Route::get('/read-data/{nim}', [MahasiswaController::class, 'read'])->middleware('auth');
+Route::get('/edit-data/{nim}',  [MahasiswaController::class, 'edit'])->middleware('auth');
 Route::post('/update-data/{nim}',  [MahasiswaController::class, 'update']);
-Route::get('/delete-data/{nim}', [MahasiswaController::class, 'delete']);
+Route::get('/delete-data/{nim}', [MahasiswaController::class, 'delete'])->middleware('auth');

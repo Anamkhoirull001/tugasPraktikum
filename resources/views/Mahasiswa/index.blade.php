@@ -1,7 +1,8 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="container mt-4">
+<a href="/MahasiswaInput" class="btn btn-success mt-0">Create Data</a>
+    <div class="container mt-2">
         @if(session('status'))
         <div class="alert alert-success">
             {{ session('status') }}
@@ -29,14 +30,13 @@
                 <td class="table-info">{{ $datas -> nama }}</td>
                 <td class="table-info">{{ $datas -> umur }}</td>
                 <td class="table-info">
-                    <a href="read-data/{{ $datas -> nim }}" class="btn btn-info">Read</a>
-                    <a href="edit-data/{{$datas -> nim}}" class="btn btn-warning">Edit</a>
-                    <a href="delete-data/{{ $datas -> nim }}" class="btn btn-danger" onclick="return confirm('Are You Sure Deleted?')">Delete</a>
+                    <a href="read-data/{{ $datas -> nim }}" class="btn btn-info"><i class="bi bi-eye-fill"></i></a>
+                    <a href="edit-data/{{$datas -> nim}}" class="btn btn-warning"><i class="bi bi-pencil-square"></i> Edit</a>
+                    <a href="delete-data/{{ $datas -> nim }}" class="btn btn-danger" onclick="return confirm('Are You Sure Deleted?')"><i class="bi bi-trash3-fill text-black"></i></a>
                 </td>
 
             </tr>
             @endforeach
         </table>
-        <a href="/MahasiswaInput" class="btn btn-success m-2">Create Data</a>
     </div>
 @endsection

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="container mt-5">
+    <div class="container mt-4">
         @if(session('status'))
         <div class="alert alert-success">
             {{ session('status') }}
@@ -50,8 +50,8 @@
                         <td class="table-info">{{ $data -> updated_at }}</td>
                     </tr>
                 </table>
-                            <a href="/edit-data/{{ $data -> nim }}" class="btn btn-warning mx-4">Edit</a>
-                            <a href="/delete-data/{{ $data -> nim }}" class="btn btn-danger mx-4" onclick="return confirm('Are You Sure Deleted?')">Delete</a>
+                            <a href="/edit-data/{{ $data -> nim }}" class="btn btn-warning mx-4"><i class="bi bi-pencil-square px-2"></i></a>
+                            <a href="/delete-data/{{ $data -> nim }}" class="btn btn-danger mx-4" onclick="return confirm('Are You Sure Deleted?')"><i class="bi bi-trash3-fill text-black px-2"></i></a>
             </div>
         </div>
         <a href="/Mahasiswa" class="btn btn-primary mt-3">back</a>

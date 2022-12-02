@@ -32,7 +32,10 @@ class MahasiswaController extends Controller
     {
         $model = new Mahasiswa();
         $datas = $model->all();
-        return view('Mahasiswa.index', ['datas' => $datas]);
+        return view('Mahasiswa.index', [
+            'datas' => $datas,
+            'title' => 'CRUD | Mahasiswa'
+        ]);
     }
 
     public function delete($nim)
@@ -51,7 +54,10 @@ class MahasiswaController extends Controller
     public function read($nim)
     {
         $model = Mahasiswa::find($nim);
-        return view('Mahasiswa.read')->with('data', $model);
+        return view('Mahasiswa.read', [
+            'data' => $model,
+            'title' => 'Read'
+        ]);
     }
 
     public function update(Request $request, $nim)
