@@ -13,16 +13,45 @@
                     <li class="nav-item">
                         <a class="nav-link " href="/Mahasiswa"><b>Mahasiswa</b></a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#"><b>Company</b></a>
+                    </li>
                 </ul>
 
+               @auth
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle ms-auto" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            User
+                          </a>
+                          <ul class="dropdown-menu ms-auto">
+                            <li><a class="dropdown-item ms-auto" href="/acount/{{ $id = auth()->user()->id }}">Manage Acount</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li class="nav-item dropdown-item ms-auto">
+                              <form action="/logout" method="post">
+                               @csrf
+                                <button type="submit" class="nav-link border-0"><b>Log <i class="bi bi-box-arrow-right"></i>out</b></button>
+                              </form>
+                            </li>                    
+                          </ul>
+                    </li>
+                  </ul>
+                 @else  
+                  <ul class="navbar-nav ms-auto">                  
+                    <li class="nav-item dropdown-item ms-auto">
+                      <a class="nav-link border-0 " href="/login"><i class="bi bi-box-arrow-in-right"><b>Login</b></i></a>
+                    </li>
+                  </ul>
+                 @endauth
+
+                  
+                {{-- <ul class="navbar-nav ms-auto">
                     @auth
                         <li class="nav-item ">
                             <form action="/logout" method="post">
                                 @csrf
                                 <button type="submit" class="nav-link bg-white border-0"><b>Log <i class="bi bi-box-arrow-right"></i>out</b></button>
                             </form>
-                            {{-- <a  href="/login"> </a> --}}
                         </li>                    
                     @else                    
                         <li class="nav-item ">
@@ -30,7 +59,7 @@
                         </li>
                     @endauth
                     </ul>
-                
+                 --}}
             </div>
         </div>
     </nav>

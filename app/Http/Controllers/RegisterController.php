@@ -31,4 +31,9 @@ class RegisterController extends Controller
 
         return redirect('login')->with('success', 'Register successfull! pelase Login now!');
     }
+
+    // public function show()
+    // {
+    //     dd("berhasil");
+    // }
 }

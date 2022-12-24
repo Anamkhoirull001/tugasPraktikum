@@ -29,13 +29,13 @@
     </head>
     <body class="text-center" style="height: 100%">
         <nav>
-            @include('partials.navbar')
+            @include('Partials.navbar')
         </nav>
         <main>
             @yield('container')
         </main>
         <footer style="position:fixed; bottom:-10px; left:8.3%">            
-            @include('partials.footer')
+            @include('Partials.footer')
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>

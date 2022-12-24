@@ -35,6 +35,8 @@ Route::post('logout', [LoginController::class, 'logout']);
 
 Route::get('register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store']);
+Route::get('acount/1', [RegisterController::class, 'show'])->middleware('auth');
+
 
 // CRUD 1
 Route::get('/input', [PostController::class, 'index'])->middleware('auth');

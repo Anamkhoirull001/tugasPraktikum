@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('Layouts.main')
 
 @section('container')
     <div class="container mt-4">

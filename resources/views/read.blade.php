@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('Layouts.main')
 
 @section('container')
 <a href="/input" class="btn btn-success mt-0">Create Data</a>

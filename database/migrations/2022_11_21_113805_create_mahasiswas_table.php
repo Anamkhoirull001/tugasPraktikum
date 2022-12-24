@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Mahasiswas', function (Blueprint $table) {
+        Schema::create('mahasiswas', function (Blueprint $table) {
             $table->string('nim', 18)->primary();
             $table->string('nama', 100);
             $table->integer('umur');
