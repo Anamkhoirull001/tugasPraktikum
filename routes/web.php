@@ -19,14 +19,22 @@ use App\Http\Controllers\MahasiswaController;
 |
 */
 
-Route::get('/nama3', function () {
-    echo '<h1> ini adalah /nama3';
+Route::get('/nama', function () {
+    echo '<h1> ini adalah /nama1';
 })->middleware('cmw');
 
 
 Route::get('/', function () {
     return view('welcome', ['title' => 'CRUD | Home']);
-});
+})->middleware('guest');
+
+Route::get('account', function(){
+    return view("account", ['title' => 'CRUD | Account']);
+})->middleware('auth');
+
+Route::get('dasboard', function(){
+    return view("dasboard", ['title' => 'CRUD | Dasboard']);
+})->middleware('auth');
 
 Route::get('login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('login', [LoginController::class, 'authenticate']);
@@ -35,8 +43,6 @@ Route::post('logout', [LoginController::class, 'logout']);
 
 Route::get('register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store']);
-Route::get('acount/1', [RegisterController::class, 'show'])->middleware('auth');
-
 
 // CRUD 1
 Route::get('/input', [PostController::class, 'index'])->middleware('auth');

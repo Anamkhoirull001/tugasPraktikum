@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('Login.index', ['title' => 'Login!']);
+        return view('Login.index', ['title' => 'CRUD | Login!']);
     }
 
     public function authenticate(Request $request)
@@ -21,7 +21,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($validate)) {
             $request->session()->regenerate();
-            return redirect()->intended('/');
+            return redirect()->intended('/dasboard');
         }
         return back()->with('erorLogin', 'Username/Password anda salah!');
     }

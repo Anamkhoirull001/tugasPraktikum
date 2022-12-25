@@ -6,7 +6,7 @@
     <meta name="description" content="" />
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
     <meta name="generator" content="Hugo 0.104.2" />
-    <title>CRUD | Home</title>
+    <title>{{ $title }}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/" />
 
@@ -17,6 +17,14 @@
 
     <!-- Custom styles for this template -->
     <link href="css/cover.css" rel="stylesheet" />
+    <style>
+     .register{
+      margin-left: 35%;
+      margin-bottom: -10px;
+      text-shadow: 1.5px 2px 2px rgb(14, 184, 214);
+      color: rgb(255, 255, 255)
+     }
+    </style>
   </head>
 
   <body class="d-flex h-100 text-center text-bg-dark">
@@ -24,24 +32,17 @@
       <header class="mb-auto">
           <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid ">
-              <a class="navbar-brand text-white" href="#"><b>CRUD</b></a>
+              <a class="navbar-brand text-white " href="/"><b>CRUD</b></a>
+              <a class="navbar-brand register" href=""><h3><b>{{ ($title === 'CRUD | Register')? 'Register Now' : 'Please Login' }}</h3></b></a>
+
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                  @auth
-                    <li class="nav-item ">
-                        <form action="/logout" method="post">
-                            @csrf
-                            <button type="submit" class="nav-link bg-dark text-white border-0 "><b>Logout <i class="bi bi-box-arrow-right"> </i></b></button>
-                        </form>
-                    </li>                    
-                  @else                    
+                <ul class="navbar-nav ms-auto">                   
                       <li class="nav-item ">
-                          <a class="nav-link text-white " href="/login"><i class="bi bi-box-arrow-in-right"> <b>Login</b></i></a>
+                          <a class="nav-link text-white " href="/{{ ($title === "CRUD | Login!" ) ? 'register' : 'login' }}"><i class="bi bi-box-arrow-in-right"> <b>{{ ($title === "CRUD | Login!" ) ? 'Register' : 'Login' }}</b></i></a>
                       </li>
-                  @endauth
                 </ul>
               </div>
             </div>
@@ -49,8 +50,7 @@
           <hr>
       </header>      
         <main class="px-3">
-              <h1>Pemrograman Framework</h1>
-              <p class="lead mt-3">Laman web ini adalah laman buatan saya sebagai pemenuhan atas tugas mata kuliah  pemrograman Framework dimana Framework yang dipakai adalah  Framework dari Bahasa Pemrograman PHP yaitu Laravel</p>             
+          @yield('container')
         </main>
         <footer class="mt-auto text-white-50">
           <p>

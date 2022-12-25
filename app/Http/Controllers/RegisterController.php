@@ -11,7 +11,7 @@ class RegisterController extends Controller
     public function index()
     {
         return view('Register.index', [
-            'title' => 'Register'
+            'title' => 'CRUD | Register'
         ]);
     }
 

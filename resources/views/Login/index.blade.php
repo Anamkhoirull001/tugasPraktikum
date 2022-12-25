@@ -1,4 +1,4 @@
-@extends('Layouts.main')
+@extends('Layouts.main_welcome')
 
 @section('container')
     <div class="row justify-content-center">
@@ -15,13 +15,13 @@
             @endif
 
             <main class="form-signin w-100 m-auto">
-                <h1 class="h3 mb-5 mt-3 fw-normal">Please Login</h1>
+                {{-- <h1 class="h3 mb-5 fw-normal">Please Login</h1> --}}
                 <form method="post" action="/login">
                     @csrf
                     <div class="form-floating">
                         <input
                             type="text"
-                            class="form-control @error('username') is-invalid @enderror"
+                            class="form-control text-white @error('username') is-invalid @enderror"
                             name="username"
                            id="username"
                            placeholder="username"
@@ -39,7 +39,7 @@
                     <div class="form-floating">
                         <input
                            type="password"
-                            class="form-control"
+                            class="form-control text-white"
                             name="password"
                            id="Password"
                            placeholder="Password"
@@ -51,7 +51,7 @@
                            Login
                        </button>
                 </form>
-                   <small>Not Regstered? <a href="/register">Register Now</a></small>
+                   <small>Not Registered? <a href="/register">Register Now</a></small>
              </main>
         </div>
     </div>

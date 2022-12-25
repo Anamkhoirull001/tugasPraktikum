@@ -61,18 +61,25 @@ body {
     margin-bottom: -1px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+    background-color: #333;
+
 }
 
 .form-signin input[type="password"] {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    background-color: #333;
 }
 
-.form-registration input {
+.form-registration input.form-control{
     border-radius: 0;
     margin-bottom: -1px;
+    background-color: #333;
+    color: white !important;
+
 }
+
 
 .card-header {
     background-color: rgb(78, 135, 161);
@@ -80,6 +87,10 @@ body {
 h4 {
     color: white;
 }
+
+img{
+    border-radius: 50%;
+  }
 
 @media (min-width: 768px) {
     .bd-placeholder-img-lg {
