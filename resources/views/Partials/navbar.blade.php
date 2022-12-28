@@ -14,18 +14,20 @@
                         <a class="nav-link " href="/Mahasiswa"><b>Mahasiswa</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="#"><b>Company</b></a>
+                        <a class="nav-link " href="/Company"><b>Company</b></a>
                     </li>
                 </ul>
 
                @auth
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle ms-auto" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="/img/no photo.png" width="40px" height="40px" alt=""><small style="size: 2px">{{ auth()->user()->username }}</small>
                           </a>
                           <ul class="dropdown-menu ms-auto">
                             <li><a class="dropdown-item text-center" href="/account">Acount</a></li>
+                            <li class="bg-danger bg-opacity-50" {{ $title == "CRUD | Account"? '': 'hidden' }}><a href="deleteAccount/{{ auth()->user()->id }}" class="dropdown-item text-center text-danger" onclick="return confirm('Are You Sure Deleted Account?')">Delete Account</a>
+                            </li>
                             <li><hr class="dropdown-divider"></li>
                             <li class="nav-item dropdown-item ms-auto">
                               <form action="/logout" method="post">

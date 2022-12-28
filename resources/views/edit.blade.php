@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel 8 Form Example Tutorial</title>
+    <title>Form Edit Books</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
@@ -14,20 +14,32 @@
   @endif
   <div class="card">
     <div class="card-header text-center font-weight-bold bg-info">
-      Laravel 8 - Update Blog Post Form Example
+       Blog Update Books
     </div>
     <div class="card-body">
       <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('update')}}/{{ $data -> id }}">
-       @csrf
+        @csrf
         <div class="form-group">
-          <label for="exampleInputEmail1">Title</label>
-          <input type="text" id="title" name="title" class="form-control" required="" value="{{ $data -> title }}">
+          <label for="judulBuku">Judul Buku</label>
+          <input type="text" id="judulBuku" name="judulBuku" class="form-control" required value="{{ $data -> judulBuku }}">
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Description</label>
-          <textarea name="description" class="form-control" required="" >{{ $data -> description }}</textarea>
+          <label for="penulis">Penulis</label>
+          <input type="text" id="penulis" name="penulis" class="form-control" required value="{{ $data -> penulis }}">
         </div>
-        <button type="submit" class="btn btn-success mt-2">Update</button>
+        <div class="form-group">
+          <label for="halaman">Halaman</label>
+          <input type="number" id="halaman" name="halaman" class="form-control" required value="{{ $data -> halaman }}">
+        </div>
+        <div class="form-group">
+          <label for="tahunTerbit">Tahun Terbit</label>
+          <input type="date" id="tahunTerbit" name="tahunTerbit" class="form-control" required value="{{ $data -> tahunTerbit }}">
+        </div>
+        <div class="form-group">
+          <label for="deskripsiBuku">Desktipsi Buku</label>
+          <textarea name="deskripsiBuku" class="form-control" required="">{{ $data -> deskripsiBuku }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Update</button>
       </form>
     </div>
   </div>

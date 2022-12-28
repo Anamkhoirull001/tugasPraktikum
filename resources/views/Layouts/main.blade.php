@@ -29,7 +29,7 @@
     </head>
     <body class="text-center" style="height: 100%">
         <nav>
-            @include('Partials.navbar')
+            @include("Partials.navbar") 
         </nav>
         <main>
             @yield('container')

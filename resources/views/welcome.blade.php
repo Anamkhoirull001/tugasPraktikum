@@ -19,10 +19,10 @@
     <link href="css/cover.css" rel="stylesheet" />
   </head>
 
-  <body class="d-flex h-100 text-center text-bg-dark">
+  <body class="d-flex h-100 text-center text-bg-dark">   
     <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="mb-auto">
-          <nav class="navbar navbar-expand-lg ">
+        <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid ">
               <a class="navbar-brand text-white" href="#"><b>CRUD</b></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,17 +40,25 @@
                   @else                    
                       <li class="nav-item ">
                           <a class="nav-link text-white " href="/login"><i class="bi bi-box-arrow-in-right"> <b>Login</b></i></a>
-                      </li>
+                        </li>
                   @endauth
                 </ul>
               </div>
             </div>
           </nav>
           <hr>
-      </header>      
+
+          @if(session('status'))
+            <div class=" alert alert-black ">
+              {{ session('status') }}
+            </div>
+          @endif
+
+        </header>   
+           
         <main class="px-3">
-              <h1>Pemrograman Framework</h1>
-              <p class="lead mt-3">Laman web ini adalah laman buatan saya sebagai pemenuhan atas tugas mata kuliah  pemrograman Framework dimana Framework yang dipakai adalah  Framework dari Bahasa Pemrograman PHP yaitu Laravel</p>             
+          <h1>Pemrograman Framework</h1>
+          <p class="lead mt-3">Laman web ini adalah laman buatan saya sebagai pemenuhan atas tugas mata kuliah  pemrograman Framework dimana Framework yang dipakai adalah  Framework dari Bahasa Pemrograman PHP yaitu Laravel</p>             
         </main>
         <footer class="mt-auto text-white-50">
           <p>

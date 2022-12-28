@@ -51,9 +51,9 @@
                     </tr>
                 </table>
                             <a href="/edit-data/{{ $data -> nim }}" class="btn btn-warning mx-4"><i class="bi bi-pencil-square px-2"></i></a>
+                            <a href="/Mahasiswa" class="btn btn-primary mx-3">back</a>
                             <a href="/delete-data/{{ $data -> nim }}" class="btn btn-danger mx-4" onclick="return confirm('Are You Sure Deleted?')"><i class="bi bi-trash3-fill text-black px-2"></i></a>
             </div>
         </div>
-        <a href="/Mahasiswa" class="btn btn-primary mt-3">back</a>
     </div>       
 @endsection

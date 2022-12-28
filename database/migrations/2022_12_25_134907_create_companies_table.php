@@ -13,15 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('companies', function (Blueprint $table) {
             $table->id();
-            $table->string('judulBuku', 100);
-            $table->string('penulis', 50);
-            $table->integer('halaman');
-            $table->date('tahunTerbit');
-            $table->text('deskripsiBuku');
+            $table->string('nama', 255);
+            $table->string('email');
+            $table->string('alamat');
+            $table->integer('no_tlp');
+            $table->integer('umur');
+            $table->string('jabatan');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('companies');
     }
 };

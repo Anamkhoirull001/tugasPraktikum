@@ -14,13 +14,16 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $post = new Post;
-        $post->title = $request->title;
-        $post->description = $request->description;
+        $post->judulBuku = $request->judulBuku;
+        $post->penulis = $request->penulis;
+        $post->halaman = $request->halaman;
+        $post->tahunTerbit = $request->tahunTerbit;
+        $post->deskripsiBuku = $request->deskripsiBuku;
         $post->save();
-        return redirect('/read')->with('status', 'Blog Post Form Data Has Been inserted');
+        return redirect('/read')->with('status', 'Review Books Has Been inserted');
     }
 
-    public function read()
+    public function show()
     {
         $model = new Post;
         $datas = $model->all();
@@ -30,11 +33,19 @@ class PostController extends Controller
         ]);
     }
 
+    public function read($id){
+        $model = Post::find($id);
+        return view('detail', [
+         'data' => $model,
+         'title' => 'Read'
+     ]);
+    }
+
     public function delete($id)
     {
         $model = Post::find($id);
         $model->delete();
-        return redirect('/read')->with('status', 'Blog Post Form Data Has Been deleted');
+        return redirect('/read')->with('status', 'Review Books Has Been deleted');
     }
 
     public function edit($id)
@@ -46,9 +57,12 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         $model = Post::find($id);
-        $model->title = $request->title;
-        $model->description = $request->description;
+        $model->judulBuku = $request->judulBuku;
+        $model->penulis = $request->penulis;
+        $model->halaman = $request->halaman;
+        $model->tahunTerbit = $request->tahunTerbit;
+        $model->deskripsiBuku = $request->deskripsiBuku;
         $model->save();
-        return redirect('/read')->with('status', 'Blog Post Form Data Has Been Update');
+        return redirect('/read')->with('status', 'Review Books Has Been Update');
     }
 }

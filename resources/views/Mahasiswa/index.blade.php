@@ -30,9 +30,9 @@
                 <td class="table-info">{{ $datas -> nama }}</td>
                 <td class="table-info">{{ $datas -> umur }}</td>
                 <td class="table-info">
-                    <a href="read-data/{{ $datas -> nim }}" class="btn btn-info"><i class="bi bi-eye-fill"></i></a>
-                    <a href="edit-data/{{$datas -> nim}}" class="btn btn-warning"><i class="bi bi-pencil-square"></i> Edit</a>
-                    <a href="delete-data/{{ $datas -> nim }}" class="btn btn-danger" onclick="return confirm('Are You Sure Deleted?')"><i class="bi bi-trash3-fill text-black"></i></a>
+                    <a href="read-data/{{ $datas -> nim }}" class="btn btn-outline-info"><i class="bi bi-eye-fill text-black"></i></a>
+                    <a href="edit-data/{{$datas -> nim}}" class="btn btn-outline-warning"><i class="bi bi-pencil-square text-black"></i></a>
+                    <a href="delete-data/{{ $datas -> nim }}" class="btn btn-outline-danger" onclick="return confirm('Are You Sure Deleted?')"><i class="bi bi-trash3-fill text-outline-danger"></i></a>
                 </td>
 
             </tr>

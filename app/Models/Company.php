@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Company extends Model
 {
     use HasFactory;
-    protected $fillable = ["judulBuku", "penulis", "halaman", "tahunTerbit", "deskripsiBuku"];
+    protected $fillable = ['nama', 'email', 'alamat', 'no_tlp', 'umur', 'jabatan'];
+
 }
